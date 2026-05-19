@@ -32,6 +32,7 @@ jobs:
           keystore_alias_password: ${{ secrets.KEYSTORE_PASSWORD_SECRET }}
           keystore_alias: key0
         run: |
+          git clone --depth=1 --branch=master https://github.com/Anuken/Arc
           git clone --depth=1 --branch=master https://github.com/CN-ARC/Mindustry-CN-ARC Mindustry
           cd Mindustry
           sed -i 's/applicationId "io.anuke.mindustry"/applicationId "io.anuke.mindustry.arc2"/g' android/build.gradle
